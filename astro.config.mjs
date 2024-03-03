@@ -1,0 +1,15 @@
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import markdoc from "@astrojs/markdoc";
+import keystatic from "@keystatic/astro";
+
+// https://astro.build/config
+export default defineConfig({
+  site: "https://sundywy.github.io",
+  integrations: [
+    react(),
+    markdoc(),
+    ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()]),
+  ],
+  output: process.env.SKIP_KEYSTATIC ? "static" : "hybrid",
+});
