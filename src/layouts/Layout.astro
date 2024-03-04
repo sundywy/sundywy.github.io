@@ -1,5 +1,5 @@
 ---
-// import "../styles.css";
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
     title: string;
@@ -17,6 +17,7 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <ViewTransitions />
     </head>
     <body class="flex min-h-screen flex-col">
         <main class="container mx-auto mt-4 flex-grow p-10 leading-6">
