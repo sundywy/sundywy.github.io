@@ -3,5 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Home Page";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+<div class="hero bg-base-200 min-h-screen">
+  <div class="hero-content flex-col">
+    <h1 class="text-5xl font-bold">Sundy Yaputra</h1>
+    <p class="text-3xl">Personal Site</p>
+    <img
+      src="profile.jpg"
+      class="max-w-sm rounded-full aspect-square object-contain" />
+    <div class="flex flex-col items-center max-w-[60%] space-y-1">
+      <h1 class="text-5xl font-bold">Welcome</h1>
+      <p class="py-6">
+        Hi, I'm a software engineer in Singapore. Before software engineering, I was a research scientist with focus on computational fluid dynamics and sysasdmin for High Performance Computing cluster
+      </p>
+      <p>You can access my resume <a class="text-secondary" href="/resume">here</a></p>
+      <p>This site was built with Astro, TailwindCSS and DaisyUI</p>
+    </div>
+  </div>
+</div>
+
 </BaseLayout>
