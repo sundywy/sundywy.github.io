@@ -5,18 +5,17 @@ const pageTitle = "Home Page";
 <BaseLayout pageTitle={pageTitle}>
 <div class="hero bg-base-200 min-h-screen">
   <div class="hero-content flex-col">
-    <h1 class="text-5xl font-bold">Sundy Yaputra</h1>
-    <p class="text-3xl">Personal Site</p>
+    <h1 class="text-5xl font-bold mb-10">Sundy Yaputra</h1>
+    <div class="max-w-xl rounded-full border-4 border-accent mb-5">
     <img
       src="profile.jpg"
-      class="max-w-sm rounded-full aspect-square object-contain" />
-    <div class="flex flex-col items-center max-w-[60%] space-y-1">
-      <h1 class="text-5xl font-bold">Welcome</h1>
-      <p class="py-6">
-        Hi, I'm a software engineer in Singapore. Before software engineering, I was a research scientist with focus on computational fluid dynamics and sysasdmin for High Performance Computing cluster
+      class=" object-cover rounded-full aspect-square"/>
+    </div>
+    <div class="flex flex-col items-start max-w-lg space-y-6">
+      <p class="text-lg">
+        Hi, I'm a software engineer in Singapore. Before software engineering, I was a research scientist with focus on computational fluid dynamics and High Performance Computing Specialist
       </p>
-      <p>You can access my resume <a class="text-secondary" href="/resume">here</a></p>
-      <p>This site was built with Astro, TailwindCSS and DaisyUI</p>
+      <p class="text-lg">You can check my <a href="https://www.linkedin.com/in/sundywy" class="text-secondary">Linkedin<a> and <a class="text-secondary" href="https://www.github.com/sundywy">Github</a>. Or you can view my resume <a class="text-secondary" href="/resume">here</a></p>
     </div>
   </div>
 </div>
