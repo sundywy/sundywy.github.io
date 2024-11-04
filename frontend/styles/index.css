@@ -33,6 +33,10 @@ nav {
     flex-direction: column;
 }
 
+.show-nav-links {
+    display: flex;
+}
+
 .link-item {
     background-color: var(--gray-8);
     width: 100vw;
@@ -76,6 +80,7 @@ nav {
 
 @media (min-width: 768px) {
     .nav-links {
+        display: flex;
         flex-direction: row;
     }
 

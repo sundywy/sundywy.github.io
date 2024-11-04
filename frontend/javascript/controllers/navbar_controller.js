@@ -3,7 +3,12 @@ export default class extends Controller {
   static targets = ["show"];
 
   toggle() {
-    const display = this.showTarget.style.display;
-    this.showTarget.style.display = display == "none" ? "flex" : "none";
+    const showNavLinks = "show-nav-links";
+
+    if (this.showTarget.classList.contains(showNavLinks)) {
+      this.showTarget.classList.remove(showNavLinks);
+    } else {
+      this.showTarget.classList.add(showNavLinks);
+    }
   }
 }

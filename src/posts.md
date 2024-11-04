@@ -4,7 +4,7 @@ title: Posts
 ---
 
 <ul>
-  <% collections.posts.resources.each do |post| %>
+  <% collections.posts.resources.select{|p| !p.data.draft}.each do |post| %>
     <li>
       <a href="<%= post.relative_url %>"><%= post.data.title %></a>
     </li>
