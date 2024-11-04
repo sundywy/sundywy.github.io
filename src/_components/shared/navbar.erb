@@ -1,11 +1,11 @@
 <header>
-    <nav class="container">
-        <div class="hamburger">
+    <nav class="container" data-controller="navbar">
+        <div class="hamburger" data-action="click->navbar#toggle">
             <span class="line"></span>
-             <span class="line"></span>
-             <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
         </div>
-        <div class="nav-links">
+        <div class="nav-links" data-navbar-target="show">
             <a href="<%= relative_url '/'%>" class="link-item">Home</a>
             <a href="<%= relative_url '/about' %>" class="link-item">About</a>
             <a href="<%= relative_url '/posts' %>" class="link-item">Posts</a>

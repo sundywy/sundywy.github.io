@@ -28,9 +28,8 @@ nav {
 }
 
 .nav-links {
-    /* display: none; */
+    display: none;
     list-style: none;
-    display: flex;
     flex-direction: column;
 }
 
@@ -61,6 +60,10 @@ nav {
 .hero__description {
     & p {
         margin-top: 1em;
+    }
+
+    & h1 {
+        text-align: center;
     }
 }
 
