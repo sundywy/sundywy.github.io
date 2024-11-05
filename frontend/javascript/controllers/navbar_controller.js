@@ -4,11 +4,6 @@ export default class extends Controller {
 
   toggle() {
     const showNavLinks = "show-nav-links";
-
-    if (this.showTarget.classList.contains(showNavLinks)) {
-      this.showTarget.classList.remove(showNavLinks);
-    } else {
-      this.showTarget.classList.add(showNavLinks);
-    }
+    this.showTarget.classList.toggle(showNavLinks);
   }
 }

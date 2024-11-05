@@ -2,6 +2,10 @@
 @import "open-props/normalize.min.css";
 @import "open-props/buttons.min.css";
 
+body {
+    line-height: 2rem;
+}
+
 header {
     background-color: var(--gray-8);
 }
@@ -59,6 +63,7 @@ nav {
     width: 70%;
     border-radius: 2em;
     border: 0.2em solid var(--yellow-5);
+    margin-bottom: 1em;
 }
 
 .hero__description {
@@ -66,7 +71,7 @@ nav {
         margin-top: 1em;
     }
 
-    & h1 {
+    & h2 {
         text-align: center;
     }
 }
@@ -76,6 +81,15 @@ nav {
     height: 0;
     border: 1px solid var(--gray-6);
     margin-bottom: 0;
+}
+
+footer {
+    top: 100vh;
+    position: sticky;
+}
+
+.footer__content {
+    padding: 2em 0;
 }
 
 @media (min-width: 768px) {
@@ -102,6 +116,10 @@ nav {
 
     .hero {
         flex-direction: row-reverse;
+    }
+
+    .hero__image {
+        margin-left: 1.5em;
     }
 
     .hero__image {
