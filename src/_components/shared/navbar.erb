@@ -1,15 +1,15 @@
 <header>
-    <nav class="container" data-controller="navbar" data-navbar-target="button">
-        <div class="hamburger" data-action="click->navbar#toggle">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
-        <div class="nav-links" data-navbar-target="show">
-            <a href="<%= relative_url '/'%>" class="link-item">Home</a>
-            <a href="<%= relative_url '/about' %>" class="link-item">About</a>
-            <a href="<%= relative_url '/posts' %>" class="link-item">Posts</a>
-            <a href="<%= relative_url '/misc' %>" class="link-item">Misc</a>
-        </div>
-    </nav>
+  <nav class="navbar container" data-controller="navbar" data-navbar-target="button">
+    <button class="hamburger" data-action="click->navbar#toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M32 96v64h448V96zm0 128v64h448v-64zm0 128v64h448v-64z" />
+      </svg>
+    </button>
+    <div class="navbar__links" data-navbar-target="show">
+      <a href="<%= relative_url '/' %>" class="navbar__links-item">Home</a>
+      <a href="<%= relative_url '/about' %>" class="navbar__links-item">About</a>
+      <a href="<%= relative_url '/posts' %>" class="navbar__links-item">Posts</a>
+      <a href="<%= relative_url '/misc' %>" class="navbar__links-item">Misc</a>
+    </div>
+  </nav>
 </header>
