@@ -20,12 +20,17 @@ header {
     flex-direction: column;
     padding: 2em;
     align-items: start;
+    position: relative;
 }
 
 .navbar__links {
     display: none;
     list-style: none;
     flex-direction: column;
+    position: absolute;
+    top: 5em;
+    left: 0;
+    width: 100%;
 }
 
 .show-nav-links {
@@ -33,9 +38,10 @@ header {
 }
 
 .navbar__links-item {
+    display: block;
     background-color: var(--surface-3);
-    width: 100vw;
-    padding: 1em 0;
+    padding-inline-start: 2em;
+    padding-block: 2em;
 }
 
 .container {
@@ -88,6 +94,8 @@ footer {
     .navbar__links {
         display: flex;
         flex-direction: row;
+        position: relative;
+        top: 0;
     }
 
     .hamburger {
@@ -96,10 +104,14 @@ footer {
 
     .navbar {
         flex-direction: row;
+        max-width: 1024px;
+        width: 95%;
+        margin: 0 auto;
     }
 
     .navbar__links-item {
         width: 100%;
+        /* position: absolute; */
     }
 
     .navbar__links-item + .navbar__links-item {
