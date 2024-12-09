@@ -1,5 +1,10 @@
 ---
 import "@fontsource/roboto";
+
+const links = [
+    "Home", "Posts", "About"
+];
+
 ---
 
 <html lang="en">
@@ -13,9 +18,7 @@ import "@fontsource/roboto";
 <body>
 <div class="navbar bg-base-100 justify-center items-center">
     <ul class="menu menu-horizontal px-1">
-        <li><a>Home</a></li>
-        <li><a>Posts</a></li>
-        <li><a>About</a></li>
+        {links.map(link => <li><a class="text-lg">{link}</a></li>)}
     </ul>
 </div>
 
