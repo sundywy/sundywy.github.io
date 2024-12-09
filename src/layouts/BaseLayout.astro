@@ -1,0 +1,30 @@
+---
+import "@fontsource/roboto";
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>Sundy's Website</title>
+</head>
+<body>
+<div class="navbar bg-base-100 justify-center items-center">
+    <ul class="menu menu-horizontal px-1">
+        <li><a>Home</a></li>
+        <li><a>Posts</a></li>
+        <li><a>About</a></li>
+    </ul>
+</div>
+
+<slot />
+
+<footer class="footer footer-center bg-base-300 text-base-content p-4">
+    <aside>
+        <p>Copyright © {new Date().getFullYear()} - All right reserved by Sundy Yaputra</p>
+    </aside>
+</footer>
+</body>
+</html>

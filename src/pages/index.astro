@@ -1,15 +1,28 @@
 ---
+import profileImage from "../assets/profile_pic.jpeg"
+import {Image} from "astro:assets"
+import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <Image
+                    src={profileImage}
+                    alt="profile pic"
+                    class="max-w-sm rounded-lg shadow-2xl"/>
+            <div>
+                <h1 class="text-5xl font-bold">Sundy Yaputra</h1>
+                <p class="py-6">
+                    Hi, I'm a backend engineer based in Singapore. Before software engineering, I was a research scientist
+                    in computational fluid dynamics and HPC Specialist.
+                </p>
+                <p class="py-6">
+                    You can find out more about me <a class="text-primary" href="/about">here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+
