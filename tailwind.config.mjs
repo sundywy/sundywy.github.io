@@ -10,6 +10,7 @@ export default {
 		daisyui
 	],
 	daisyui: {
-		themes: ["cupcake", "dracula"]
+		themes: ["cupcake", "dracula"],
+		darkTheme: "dracula",
 	}
 }
