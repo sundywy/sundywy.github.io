@@ -1,0 +1,32 @@
+---
+import Prose from '../../components/Prose.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {getCollection, render} from 'astro:content';
+
+export async function getStaticPaths() {
+    function slugify(str: String) {
+        str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
+        str = str.toLowerCase(); // convert string to lowercase
+        str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
+            .replace(/\s+/g, '-') // replace spaces with hyphens
+            .replace(/-+/g, '-'); // remove consecutive hyphens
+        return str;
+    }
+
+    const posts = await getCollection('posts');
+    return posts.map(post => ({
+        params: {slug: slugify(post.data.title)},
+        props: {post}
+    }));
+}
+
+const {post} = Astro.props
+const {Content} = await render(post);
+---
+<BaseLayout>
+    <div class="container mx-auto mb-5 px-5 lg:px-10">
+        <Prose>
+            <Content/>
+        </Prose>
+    </div>
+</BaseLayout>
