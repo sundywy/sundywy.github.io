@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {getCollection} from 'astro:content';
+import {slugify} from "../../lib/util";
+
+const posts = await getCollection('posts');
+---
+<BaseLayout>
+
+    <h1 class="text-5xl text-center">Posts</h1>
+
+    <h2 class="text-3xl mb-3">All my posts so far</h2>
+
+    <ul class="space-x-3">
+        {posts.map((post) =>
+                <li><a href=`/posts/${slugify(post.data.title)}`>{post.data.title}</a></li>
+        )}
+    </ul>
+
+
+</BaseLayout>
