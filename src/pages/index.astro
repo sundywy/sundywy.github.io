@@ -1,14 +1,12 @@
 ---
-import profileImage from "../assets/profile_pic.jpeg"
-import {Image} from "astro:assets"
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
 <BaseLayout>
     <div class="hero bg-base-200 min-h-screen">
         <div class="hero-content flex-col lg:flex-row-reverse max-w-screen-lg">
-            <Image
-                    src={profileImage}
+            <img
+                    src="/profile_pic.jpeg"
                     alt="profile pic"
                     class="sm:max-w-xl rounded-lg shadow-2xl"/>
             <div>
@@ -24,5 +22,3 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         </div>
     </div>
 </BaseLayout>
-
-
