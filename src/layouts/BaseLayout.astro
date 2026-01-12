@@ -1,5 +1,7 @@
 ---
 import "@fontsource/roboto";
+import "open-props/style";
+import "open-props/normalize";
 
 const links = [
     {name: "Home", link: '/'},
@@ -17,50 +19,54 @@ const links = [
     <title>Sundy's Website</title>
 </head>
 <body>
-<header class="bg-base-100">
-    <div class="navbar container mx-auto max-w-screen-lg">
-        <ul class="menu menu-horizontal px-1">
+<header>
+    <nav>
+        <ul>
             {links.map(link =>
-                    <li><a class="text-lg" href=`${link.link}`>{link.name}</a></li>)}
+                    <li><a href=`${link.link}`>{link.name}</a></li>)}
         </ul>
-        <label class="flex cursor-pointer gap-2 ml-auto">
-            <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"/>
-                <path
-                        d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
-            </svg>
-            <input type="checkbox" value="dracula" class="toggle theme-controller"/>
-            <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </label>
-    </div>
+    </nav>
 </header>
 
-<slot/>
+<main>
+    <slot/>
+</main>
 
-<footer class="footer footer-center bg-base-300 text-base-content p-4 sticky top-[100vh]">
-    <aside class="max-w-screen-lg">
+<footer>
+    <aside>
         <p>Copyright © {new Date().getFullYear()} - All right reserved by Sundy Yaputra</p>
     </aside>
 </footer>
 </body>
 </html>
+<style>
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+        gap: var(--size-5);
+    }
+
+    header {
+        padding-inline: var(--size-5);
+    }
+
+    nav ul {
+        display: flex;
+        gap: var(--size-5);
+        list-style: none;
+        padding: 0;
+    }
+
+    main {
+        max-width: var(--size-content-3);
+        margin-inline: auto;
+        padding-inline: var(--size-5);
+    }
+
+    footer {
+        text-align: center;
+        padding: var(--size-5);
+    }
+</style>
+

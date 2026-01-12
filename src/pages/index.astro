@@ -1,24 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import {Image} from "astro:assets"
+import profilePic from "../assets/profile_pic.jpeg"
 ---
 
 <BaseLayout>
-    <div class="hero bg-base-200 min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse max-w-screen-lg">
-            <img
-                    src="/profile_pic.jpeg"
-                    alt="profile pic"
-                    class="sm:max-w-xl rounded-lg shadow-2xl"/>
-            <div>
-                <h1 class="lg:text-left text-center text-5xl font-bold">Sundy Yaputra</h1>
-                <p class="py-6">
-                    Hi, I'm a backend engineer based in Singapore. Before software engineering, I was a research scientist
-                    in computational fluid dynamics and HPC Specialist.
-                </p>
-                <p class="py-6">
-                    You can find out more about me <a class="text-primary" href="/about">here</a>
-                </p>
-            </div>
+    <section>
+        <Image
+                src={profilePic}
+                alt="profile pic"
+        />
+        <div class="card">
+            <h1>Sundy Yaputra</h1>
+            <p>
+                Hi, I'm a backend engineer based in Singapore. Before software engineering, I was a research scientist
+                in computational fluid dynamics and HPC Specialist.
+            </p>
+            <p>
+                You can find out more about me <a href="/about">here</a>
+            </p>
         </div>
-    </div>
+    </section>
 </BaseLayout>
+<style>
+    section {
+        display: grid;
+        gap: var(--size-5);
+        align-items: center;
+    }
+
+    @media (min-width: 768px) {
+        section {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    img {
+        width: 100%;
+        border-radius: var(--radius-3);
+        box-shadow: var(--shadow-5);
+    }
+
+    .card {
+        padding: var(--size-5);
+    }
+
+    h1 {
+        font-size: var(--font-size-6);
+        font-weight: var(--font-weight-9);
+    }
+
+    p {
+        font-size: var(--font-size-fluid-1);
+    }
+</style>

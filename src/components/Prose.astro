@@ -1,9 +1,26 @@
 ---
 
 ---
-<div
-        class="prose dark:prose-invert
-  prose-h1:font-bold prose-h1:text-3xl prose-h1:text-center
-  prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl">
+<div class="prose">
     <slot/>
 </div>
+<style>
+    .prose h1 {
+        font-size: var(--font-size-6);
+        font-weight: var(--font-weight-9);
+        text-align: center;
+    }
+
+    .prose p {
+        font-size: var(--font-size-fluid-1);
+        text-align: justify;
+    }
+
+    .prose a {
+        color: var(--link);
+    }
+
+    .prose img {
+        border-radius: var(--radius-3);
+    }
+</style>
